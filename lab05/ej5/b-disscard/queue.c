@@ -113,3 +113,25 @@ queue queue_destroy(queue q) {
     return q;
 }
 
+queue queue_disscard(queue q, unsigned int n) {
+    assert(q->size<=n && !queue_is_empty(q));
+
+    // para contar elementos
+    unsigned int i = 0u;
+    // para recorrer q
+    struct s_node *p = q->first;
+
+    // llevo p al n-esimo elemento
+    while (i<n) {
+        p = p->next;
+        i++;
+    }
+
+    struct s_node *sig_p = ((p->next)->next);
+    p->next = sig_p->next;
+    free(sig_p);
+    sig_p = NULL;
+    p=NULL;
+
+    return q;
+}
