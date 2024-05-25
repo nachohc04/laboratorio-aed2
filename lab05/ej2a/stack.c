@@ -9,12 +9,12 @@ struct _s_stack {
 };
 
 stack stack_empty() {
-    	stack s = NULL;
+    stack s = NULL;
 	return s;
 }
 
 stack stack_push(stack s, stack_elem e) {
-    	stack s_aux = s;
+	stack s_aux = s;
 	s = malloc(sizeof(struct _s_stack));
 	s->elem = e;
 	s->next = s_aux; 
@@ -36,16 +36,13 @@ unsigned int stack_size(stack s) {
 	unsigned int size = 0u;
 
 	if (s!=NULL) {
-	
-	
-	
 		stack s_aux = s;
 
 		while (s_aux->next!=NULL) {
 			s_aux = s_aux->next;
 			size++;
 		}
-	 }
+	}
 
 	
 	return size;
@@ -64,7 +61,7 @@ stack_elem *stack_to_array(stack s) {
 	stack s_aux=s;
 	unsigned int size = stack_size(s);
 	stack_elem *arr = calloc(size,sizeof(stack_elem));
-	for (unsigned int i = 0u;i<size;++i){
+	for (unsigned int i = 0u;i<=size;++i){
 		arr[i] = s_aux->elem;
 		s_aux=s_aux->next;
 	}

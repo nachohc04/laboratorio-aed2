@@ -63,7 +63,7 @@ int main(int argc, char *argv[]) {
   }
   // stack to array (to get the array)
   new_array = stack_to_array(s);
-  stack_destroy(s);
+  //stack_destroy(s);
   
   printf("Reversed: ");
   array_dump(new_array, length);

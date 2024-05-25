@@ -47,7 +47,7 @@ bool string_is_symmetric(const char *str) {
 
     size_t ls = string_length(str);
 
-    for (unsigned int i = 0; i<(ls/2); i++) {
+    for (unsigned int i = 0; i<(ls/2) && r; i++) {
         r = r && str[i] == str[ls-1-i]; // checkeo los elementos en posiciones "opuestas"
     }
 

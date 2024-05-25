@@ -10,7 +10,7 @@
 /**
 * @brief Stack type definition
 */
-typedef struct stack stack;
+typedef struct stack *stack;
 
 /**
 * @brief Stack elements type definition
@@ -64,7 +64,7 @@ bool stack_is_empty(stack s);
 /**
 * @brief Creates an array with all the elements of the stack
 * @param s A stack
-* @return An array containing all the elements of the stack. The stack top element
+* @return An arrstackay containing all the elements of the stack. The stack top element
 * becomes the rightmost element of the array. The size of the resulting
 * array is determined by 'stack_size(s)'
 */
